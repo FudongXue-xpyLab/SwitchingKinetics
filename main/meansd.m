@@ -64,7 +64,8 @@ il = 1;
 if temlegh<limlegh
     til = 1:temlegh;
     iMean = [t; iMean];
-    iMean = [[0, til]', iMean, [0; dist2center]];
+    iMean1 = [[0, til]', iMean2];
+%     iMean = [[0, til]', iMean, [0; dist2center]];
     fidm = [filebase,'_imean.xls'];
     xlswrite(fidm, iMean);
     iValue = [til', specificValue];
@@ -78,7 +79,8 @@ else
         til = limlegh*(il-1)+(1:limlegh);
         iMean2 = [t; iMean(1:limlegh,:)];
         dist2center2 = dist2center(1:limlegh);
-        iMean1 = [[0, til]', iMean2, [0; dist2center2]];
+        iMean1 = [[0, til]', iMean2];
+%         iMean1 = [[0, til]', iMean2, [0; dist2center2]];
 %         iRatio2 = [t',iRatio(1:limlegh,:)'];
 %         iRatio1 = [[0 til];  iRatio2];
         iValue1 = [til', specificValue(1:limlegh,:)];
@@ -96,7 +98,8 @@ else
     end
     til = 1:temlegh;
     iMean = [t; iMean];
-    iMean = [[0, til]', iMean, [0; dist2center]];
+    iMean1 = [[0, til]', iMean2];
+%     iMean = [[0, til]', iMean, [0; dist2center]];
     fidm = [filebase,'_imean',num2str(il),'.xls'];
     xlswrite(fidm, iMean, 'sheet1');
     iValue = [til', specificValue];
